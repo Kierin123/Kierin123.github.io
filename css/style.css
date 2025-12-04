@@ -7,13 +7,14 @@
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   scroll-behavior: smooth;
 }
 
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background: #f2f3f5;
+  background: #1c428f;
   color: #222;
   line-height: 1.6;
 }
@@ -24,22 +25,31 @@ body {
    ZMIENNE KOLORÓW
 ----------------------------------- */
 :root {
-  --accent: #3b82f6;       /* delikatny niebieski */
-  --accent-hover: #2563eb;
+  --accent: #F97316;
+  /* pomarańcz */
+  --accent-hover: #EA580C;
 
-  --text-main: #1f2937;
-  --text-muted: #6b7280;
+  --nav-bg: #0F1D36;
+  /* bardzo ciemny granat */
+  --hero-bg: #10203D;
+  /* tło hero (ciemniejsze) */
+  --section-bg: #F3F4F6;
+  /* jasne sekcje */
 
-  --bg-light: #ffffff;
-  --bg-gray: #f2f3f5;
+  --section-white: #ffffff;
+  --section-gray: #eef1f6;
 
-  --border: #d1d5db;
+  --text-main: #F9FAFB;
+  /* prawie białe */
+  --text-muted: #CBD5E1;
+  /* jasnoszare */
 
-  --radius: 14px;
+  --card-bg: #FFFFFF;
+  /* karty białe */
+  --border: #E5E7EB;
+
+  --radius: 16px;
   --radius-lg: 22px;
-
-  --shadow-soft: 0 8px 22px rgba(0,0,0,0.06);
-  --shadow-card: 0 10px 26px rgba(0,0,0,0.08);
 }
 
 
@@ -69,8 +79,8 @@ img {
    NAWIGACJA
 ----------------------------------- */
 .nav {
-  background: var(--bg-light);
-  box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+  background: var(--nav-bg);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
   position: sticky;
   top: 0;
   z-index: 100;
@@ -124,7 +134,7 @@ img {
 
 .cta-nav {
   background: var(--accent);
-  color: white !important;
+  color: #fff;
   padding: 8px 18px;
   border-radius: var(--radius);
   box-shadow: var(--shadow-soft);
@@ -145,6 +155,10 @@ img {
   justify-content: space-between;
   gap: 50px;
   padding-top: 40px;
+  background: var(--hero-bg);
+  color: var(--text-main);
+  padding: 80px 40px;
+  border-radius: var(--radius-lg);
 }
 
 .hero-left {
@@ -159,7 +173,7 @@ img {
   font-size: 2.7rem;
   line-height: 1.2;
   font-weight: 700;
-  color: var(--text-main);
+  color: #fff;
   margin-bottom: 24px;
 }
 
@@ -183,7 +197,7 @@ img {
 .btn-primary {
   text-decoration: none;
   background: var(--accent);
-  color: white;
+  color: #fff;
   padding: 12px 28px;
   font-weight: 600;
   border-radius: var(--radius);
@@ -218,10 +232,13 @@ img {
    SEKCJE
 ----------------------------------- */
 .section {
-  background: var(--bg-light);
+  background: var(--hero-bg);
+  /* ciemna sekcja */
+  color: var(--text-main);
+  /* białawy tekst */
   border-radius: var(--radius-lg);
   padding: 60px;
-  box-shadow: var(--shadow-card);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 .section-title {
@@ -259,7 +276,7 @@ img {
 
 .card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 26px rgba(0,0,0,0.08);
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.08);
 }
 
 .card h3 {
@@ -293,7 +310,7 @@ img {
 /* -----------------------------------
    PROJEKTY
 ----------------------------------- */
-.projects {
+/* .projects {
   margin-top: 36px;
   display: grid;
   gap: 26px;
@@ -326,7 +343,7 @@ img {
 
 .project p {
   color: var(--text-muted);
-}
+} */
 
 
 
@@ -391,9 +408,159 @@ img {
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.9s ease, transform 0.9s ease;
+  
 }
 
 .fade-in.show {
   opacity: 1;
   transform: translateY(0);
+}
+
+
+/* --- DANE KONTAKTOWE W JEDNEJ KOLUMNIE --- */
+
+.contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.contact-row {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.contact-label {
+  width: 60px;
+  /* SZEROKOŚĆ KOLUMNY Z ETYKIETAMI */
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.contact-value {
+  flex: 1;
+  color: var(--text-muted);
+}
+
+
+
+
+/* -----------------------------------
+   NAPRZEMIENNE SEKCJE – JASNA KOLORYSTYKA
+----------------------------------- */
+
+/* Sekcja biała */
+.section:nth-of-type(odd) {
+  background: var(--section-white);
+  color: #1f2937;
+}
+
+.section:nth-of-type(odd) .section-title {
+  color: #1f2937;
+}
+
+.section:nth-of-type(odd) p {
+  color: #4b5563; /* średni szary – lepsza czytelność */
+}
+
+/* Sekcja jasnoszara */
+.section:nth-of-type(even) {
+  background: var(--section-gray);
+  color: #1f2937;
+}
+
+.section:nth-of-type(even) .section-title {
+  color: #1f2937;
+}
+
+.section:nth-of-type(even) p {
+  color: #4b5563;
+}
+
+/* Karty w jasnych sekcjach */
+.section .card {
+  background: white;
+  color: #1f2937;
+  box-shadow: rgba(0,0,0,0.06) 0 4px 12px;
+}
+
+.section .card h3 {
+  color: #1f2937;
+}
+
+.section .card p {
+  color: #4b5563;
+}
+
+/* Usuwamy ciemne tło narzucone wcześniej na wszystkie sekcje */
+.section {
+  background: transparent;
+  box-shadow: none;
+  color: inherit;
+}
+
+/* --- KONTRAST TEKSTU W ZESPOLE --- */
+.team-card *,
+.team-card h3,
+.team-card p {
+  color: #1f2937 !important; /* ciemny tekst */
+}
+
+/* --- KONTRAST TEKSTU W KONTAKCIE --- */
+#kontakt,
+#kontakt p,
+#kontakt span,
+#kontakt .contact-label,
+#kontakt .contact-value {
+  color: #1f2937 !important; /* czytelny, ciemny tekst */
+}
+
+.team-card {
+  background: #ffffff !important;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+} 
+
+
+/* --- ZESPÓŁ — UKŁAD 2x2 --- */
+.team {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);  /* 2 kolumny */
+  gap: 26px 32px;                         /* odstępy pion/poziom */
+  margin-top: 36px;
+}
+
+/* Karta zespołu — utrzymanie stylu */
+.team-card {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 22px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  border: 1px solid #ececec;
+}
+
+/* Avatar */
+.team-avatar {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Teksty */
+.team-card * {
+  color: #1f2937 !important;
+  font-weight: 600;
+}
+
+/* MEDIA QUERY – układ jednokolumnowy na urządzeniach mobilnych */
+@media (max-width: 820px) {
+  .team {
+    grid-template-columns: 1fr; /* 1 kolumna na telefonach/tabletach */
+  }
 }
