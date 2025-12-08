@@ -79,7 +79,7 @@ img {
    NAWIGACJA
 ----------------------------------- */
 .nav {
-  background: var(--border);
+  background: var(--nav-bg);
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
   position: sticky;
   top: 0;
@@ -120,8 +120,7 @@ img {
 
 .nav-links a {
   text-decoration: none;
-  color: #1f2937 !important;          /* ciemny, czytelny */
-  border-bottom-color: transparent;
+  color: var(--text-muted);
   font-weight: 500;
   padding-bottom: 4px;
   border-bottom: 2px solid transparent;
@@ -760,42 +759,3 @@ img {
   }
 }
 
-/* ======================================
-   ANIMOWANY HAMBURGER
-====================================== */
-
-.hamburger {
-  display: none;
-  flex-direction: column;
-  gap: 6px;
-  cursor: pointer;
-  z-index: 10000;
-}
-
-.hamburger span {
-  display: block;
-  width: 28px;
-  height: 3px;
-  background: #fff;
-  border-radius: 4px;
-  transition: 0.35s ease;
-}
-
-/* --- animacja do X --- */
-.hamburger.active span:nth-child(1) {
-  transform: translateY(9px) rotate(45deg);
-}
-
-.hamburger.active span:nth-child(2) {
-  opacity: 0;
-}
-
-.hamburger.active span:nth-child(3) {
-  transform: translateY(-9px) rotate(-45deg);
-}
-
-@media (max-width: 768px) {
-  .hamburger {
-    display: flex !important;
-  }
-}
