@@ -79,7 +79,7 @@ img {
    NAWIGACJA
 ----------------------------------- */
 .nav {
-  background: var(--nav-bg);
+  background: var(--border);
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
   position: sticky;
   top: 0;
@@ -120,7 +120,8 @@ img {
 
 .nav-links a {
   text-decoration: none;
-  color: var(--text-muted);
+  color: #1f2937 !important;          /* ciemny, czytelny */
+  border-bottom-color: transparent;
   font-weight: 500;
   padding-bottom: 4px;
   border-bottom: 2px solid transparent;
