@@ -700,3 +700,95 @@ img {
   }
 
 }
+
+
+/* ==================================
+   MOBILE NAVBAR FIX (100% poprawne)
+================================== */
+
+@media (max-width: 768px) {
+
+  /* NAV WRAPPER */
+  .nav-inner {
+    padding: 8px 16px;
+  }
+
+  /* LOGO */
+  .logo {
+    height: 50px !important;
+    width: auto !important;
+  }
+
+  /* UKRYJ LINKI MENU NA MOBILE */
+  .nav-links {
+    display: none !important;
+    flex-direction: column;
+    background: var(--nav-bg);
+    position: absolute;
+    top: 70px;
+    right: 16px;
+    width: 200px;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    gap: 12px;
+    z-index: 9999;
+  }
+
+  /* POKAŻ LISTĘ, gdy aktywna */
+  .nav-links.active {
+    display: flex !important;
+  }
+
+  /* HAMBURGER BUTTON */
+  .hamburger {
+    display: flex !important;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+  }
+
+  .hamburger span {
+    width: 28px;
+    height: 3px;
+    background: #fff;
+    border-radius: 4px;
+  }
+
+  /* UKRYJ PRZYCISK KONTAKT W MENU GŁÓWNYM */
+  .cta-nav {
+    display: block;
+    margin-top: 6px;
+    text-align: center;
+  }
+
+  /* HERO POPRAWKI */
+  .hero {
+    padding: 40px 20px;
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .hero-title {
+    font-size: 1.9rem !important;
+    line-height: 1.25;
+  }
+
+  .hero-text {
+    font-size: 1rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    text-align: center;
+    padding: 14px;
+    font-size: 1.1rem;
+  }
+}
